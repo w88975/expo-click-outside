@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-click-outside": ["../src/index"],
+      "expo-click-outside/*": ["../src/*"]
+    }
+  }
+}

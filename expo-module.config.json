@@ -1,0 +1,17 @@
+{
+  "platforms": [
+    "apple",
+    "android",
+    "web"
+  ],
+  "apple": {
+    "modules": [
+      "ExpoClickOutsideModule"
+    ]
+  },
+  "android": {
+    "modules": [
+      "expo.modules.clickoutside.ExpoClickOutsideModule"
+    ]
+  }
+}
