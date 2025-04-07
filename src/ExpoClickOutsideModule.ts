@@ -1,12 +1,15 @@
-import { NativeModule, requireNativeModule } from 'expo';
+import { NativeModule, requireNativeModule } from "expo";
+import { EventEmitter, Platform } from "expo-modules-core";
 
-import { ExpoClickOutsideModuleEvents } from './ExpoClickOutside.types';
+import { ExpoClickOutsideModuleEvents } from "./ExpoClickOutside.types";
 
 declare class ExpoClickOutsideModule extends NativeModule<ExpoClickOutsideModuleEvents> {
-  PI: number;
-  hello(): string;
-  setValueAsync(value: string): Promise<void>;
+  hello(): Promise<string>;
 }
 
-// This call loads the native module object from the JSI.
-export default requireNativeModule<ExpoClickOutsideModule>('ExpoClickOutside');
+const module = requireNativeModule<ExpoClickOutsideModule>("ExpoClickOutside");
+
+export const emitter = new EventEmitter(module);
+
+export default module;
+
