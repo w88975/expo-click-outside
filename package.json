@@ -1,6 +1,6 @@
 {
   "name": "expo-click-outside",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A way to listen click outside of react-native (use native platform api).",
   "main": "build/index.js",
   "types": "build/index.d.ts",
