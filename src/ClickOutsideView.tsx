@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { findNodeHandle, UIManager, View, type ViewProps } from "react-native";
+import { View, type ViewProps } from "react-native";
 
 import { useListenerGlobalClick } from "./useListenerGlobalClick";
 
@@ -22,9 +22,7 @@ export function ClickOutsideView(props: ClickOutsideViewProps) {
       return;
     }
 
-    const handle = findNodeHandle(containerRef.current);
-    if (handle) {
-      UIManager.measureInWindow(handle, (x, y, width, height) => {
+    containerRef.current.measureInWindow((x, y, width, height) => {
         if (
           info.x < x ||
           info.x > x + width ||
@@ -33,8 +31,7 @@ export function ClickOutsideView(props: ClickOutsideViewProps) {
         ) {
           onOutsideClick?.(info);
         }
-      });
-    }
+    });
   });
 
   return (

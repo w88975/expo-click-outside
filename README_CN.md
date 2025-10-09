@@ -13,7 +13,7 @@ npx expo install expo-click-outside
 ## 特性
 
 - 🎯 使用原生精确度检测组件外部的点击
-- 📱 跨平台支持（Android 和 iOS）
+- 📱 跨平台支持（Android 和 iOS 和 Web）
 - 🔄 实时布局更新和动态组件尺寸调整
 - 📍 通过原生触摸事件处理获取精确的点击坐标
 - 🎨 灵活的 API 选项（Hooks 和基于组件的方法）

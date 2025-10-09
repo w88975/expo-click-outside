@@ -13,7 +13,7 @@ npx expo install expo-click-outside
 ## Features
 
 - 🎯 Detect clicks outside specific components with native precision
-- 📱 Cross-platform support (Android & iOS)
+- 📱 Cross-platform support (Android & iOS & Web)
 - 🔄 Real-time layout updates and dynamic component resizing
 - 📍 Precise click coordinates using native touch event handling
 - 🎨 Flexible API options (hooks and component-based approaches)
@@ -275,6 +275,9 @@ All callbacks receive a click info object with the following properties:
 - Uses UITapGestureRecognizer for global tap detection
 - Handles safe area insets automatically
 - Optimized for various screen sizes and orientations
+
+### Web
+- Uses document.addEventListener("pointerdown") for global tap detection
 
 ## License
 

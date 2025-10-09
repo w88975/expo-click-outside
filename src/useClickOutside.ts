@@ -1,8 +1,9 @@
-import { findNodeHandle, UIManager, type View } from "react-native";
+import React from "react";
+import { type View } from "react-native";
 
 import { useListenerGlobalClick } from "./useListenerGlobalClick";
 
-type MeasurableRef = React.RefObject<React.Component<any> | View>;
+type MeasurableRef = React.RefObject<View>;
 
 export function useClickOutside(
   ref: MeasurableRef,
@@ -18,18 +19,15 @@ export function useClickOutside(
       return;
     }
 
-    const handle = findNodeHandle(ref.current);
-    if (handle) {
-      UIManager.measureInWindow(handle, (x, y, width, height) => {
-        if (
-          info.x < x ||
-          info.x > x + width ||
-          info.y < y ||
-          info.y > y + height
-        ) {
-          callback?.(info);
-        }
-      });
-    }
+    ref.current.measureInWindow((x, y, width, height) => {
+      if (
+        info.x < x ||
+        info.x > x + width ||
+        info.y < y ||
+        info.y > y + height
+      ) {
+        callback?.(info);
+      }
+    });
   });
 }
